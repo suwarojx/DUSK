@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUSK - Project MC JAVA Roleplay</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth-guard.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="site-header glass-effect">
+<div class="logo">
+    <a href="#"><img src="img/banner2.png" alt="DUSK Logo"></a>
+</div>
+        <div class="header-info">
+            <div class="info-item status-online">🟢 IP: play.dusk-mc.com</div>
+            <div class="info-item">👥 Online: 150/200</div>
+        </div>
+    </header>
+
+    <nav class="main-nav glass-effect">
+        <div class="nav-container">
+                        <ul class="nav-links">
+                <li><a href="index.html" class="active">หน้าหลัก</a></li>
+                <li><a href="chat.html">แชทบอท</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">เกี่ยวกับเซิร์ฟเวอร์ <span class="nav-dropdown-arrow">▾</span></button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1b8XUzjg0LRW1eghqyFfw-edwqzgakyKf_25sZq3WD0U/edit?usp=sharing">กฎเซิร์ฟเวอร์</a></li>
+                        <li><a href="team.html">ทีมงาน</a></li>
+                        <li><a href="story.html">เนื้อเรื่อง</a></li>
+                    </ul>
+                </li>
+                <li><a href="profile.html">โปรไฟล์</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="ค้นหาข้อมูล...">
+                <button>🔍</button>
+            </div>
+            <div id="auth-nav-slot"></div>
+        </div>
+    </nav>
+
+    <section class="banner">
+        <div class="banner-content">
+            <h1>The Dusky <span>Duck</span> Community</h1>
+            <p>เมืองแห่งบทบาทชีวิตสุดเข้มข้น ระบบคุณภาพ และ Community ที่จริงจังที่สุด</p>
+           <a href="https://discord.gg/CHJv92x4Cu" target="_blank" class="btn-glow">เข้าสู่ Discord</a>
+        </div>
+    </section>
+
+    <section class="announce-board-wrap">
+        <h2 class="section-title-center">📢 ประกาศล่าสุด</h2>
+        <div class="announce-grid">
+
+            <div class="announce-card">
+                <div class="announce-card-icon announce-icon-notice">🩸</div>
+                <h3>เปิดรับสมัครผู้เล่น Bloodmoon Legacy: AfterMatch</h3>
+                <p>ซีซันใหม่มาแล้ว! เปิดรับสมัครผู้เล่นเข้าร่วมเนื้อเรื่อง Bloodmoon Legacy: AfterMatch สมัครและสอบ Whitelist ได้แล้ววันนี้</p>
+                <div class="announce-card-footer">
+                    <span class="announce-tag announce-tag-notice">รับสมัคร</span>
+                    <span class="announce-date">27 ส.ค. 2569</span>
+                </div>
+            </div>
+
+            <div class="announce-card announce-card-featured">
+                <div class="announce-card-glow"></div>
+                <span class="announce-pin">🔥 ล่าสุด</span>
+                <div class="announce-card-icon announce-icon-update">🤖</div>
+                <h3>เปิดตัว AI DUSK อย่างเป็นทางการ!</h3>
+                <p>แชทบอท AI อัจฉริยะประจำเซิร์ฟเวอร์ พร้อมตอบคำถามและช่วยวิเคราะห์แก้ปัญหาให้ลูกโรลตลอด 24 ชั่วโมง ลองคุยได้ที่เมนู "แชทบอท"</p>
+                <div class="announce-card-footer">
+                    <span class="announce-tag announce-tag-update">อัปเดต</span>
+                    <span class="announce-date">27 ส.ค. 2569</span>
+                </div>
+            </div>
+
+            <div class="announce-card">
+                <div class="announce-card-icon announce-icon-event">🎉</div>
+                <h3>กิจกรรมฉลองครบรอบ 1 ปี DUSK</h3>
+                <p>ร่วมสนุกกับกิจกรรมพิเศษตลอดเดือนนี้ ลุ้นรับไอเทมและเงินรางวัลมากมาย เฉลิมฉลองครบรอบ 1 ปีไปด้วยกัน!</p>
+                <div class="announce-card-footer">
+                    <span class="announce-tag announce-tag-event">กิจกรรม</span>
+                    <span class="announce-date">20 ส.ค. 2569</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="layout-container">
+        
+        <main class="content-area">
+            <h2 class="section-title">อัปเดตล่าสุด / ฟีเจอร์เซิร์ฟเวอร์</h2>
+            <div class="grid-container">
+                
+                <div class="card glass-effect">
+                    <div class="card-img-placeholder">💼</div>
+                    <div class="card-body">
+                        <h3>ระบบอาชีพสมจริง</h3>
+                        <p>สวมบทบาทเป็นตำรวจ หมอ หรือประชาชน พร้อมระบบเศรษฐกิจสุดล้ำ</p>
+                        <button class="btn-outline">อ่านเพิ่มเติม</button>
+                    </div>
+                </div>
+
+                <div class="card glass-effect">
+                    <div class="card-img-placeholder">🏆</div>
+                    <div class="card-body">
+                        <h3>กิจกรรมประจำสัปดาห์</h3>
+                        <p>ร่วมสนุกกับอีเวนต์ภายในเมือง ชิงไอเทมพิเศษและเงินรางวัลมากมาย</p>
+                        <button class="btn-outline">อ่านเพิ่มเติม</button>
+                    </div>
+                </div>
+
+                <div class="card glass-effect">
+                    <div class="card-img-placeholder">🏡</div>
+                    <div class="card-body">
+                        <h3>ระบบอสังหาริมทรัพย์</h3>
+                        <p>เป็นเจ้าของบ้าน คอนโด หรือธุรกิจส่วนตัว ตกแต่งบ้านได้อย่างอิสระ</p>
+                        <button class="btn-outline">อ่านเพิ่มเติม</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            
+            <div class="widget glass-effect">
+                <h3>📌 เมนูลัด</h3>
+                <ul class="category-list">
+                    <li><a href="#">📥 วิธีการติดตั้ง Mod</a></li>
+                    <li><a href="#">📖 การสอบ Whitelist</a></li>
+                    <li><a href="#">❓ แจ้งปัญหาบัค (Ticket)</a></li>
+                    <li><a href="#">💬 กระทู้พูดคุย</a></li>
+                </ul>
+            </div>
+            
+            <div class="widget promo-widget glass-effect">
+                <div class="promo-content">
+                    <h3>✨ ผู้เล่นใหม่!</h3>
+                    <p>สอบ Whitelist ผ่านวันนี้<br>รับ Starter Pack ฟรีทันที!</p>
+                    <button class="btn-glow-small">รับของรางวัล</button>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <footer class="site-footer glass-effect">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>DUSK <span>Community</span></h3>
+                <p>สัมผัสประสบการณ์ Roleplay ที่ดีที่สุด</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">เงื่อนไขการให้บริการ</a>
+                <a href="#">นโยบายความเป็นส่วนตัว</a>
+                <a href="#">ติดต่อทีมงาน</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=61589582765236" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+                </a>
+                <a href="https://discord.gg/CHJv92x4Cu" target="_blank" rel="noopener noreferrer" aria-label="Discord" class="social-icon-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 5.36A19.8 19.8 0 0015.7 4c-.2.36-.44.85-.6 1.24a18.3 18.3 0 00-6.2 0A12.9 12.9 0 008.3 4a19.7 19.7 0 00-4.62 1.37C1.4 9.1.8 12.75 1.1 16.35a19.9 19.9 0 006.06 3.08c.49-.67.92-1.38 1.3-2.13-.71-.27-1.39-.6-2.03-1 .17-.13.34-.26.5-.4a14.2 14.2 0 0012.14 0c.16.14.33.27.5.4-.64.4-1.32.73-2.03 1 .38.75.81 1.46 1.3 2.13a19.9 19.9 0 006.06-3.08c.36-4.17-.72-7.78-3.58-10.99zM8.68 14.1c-.86 0-1.56-.8-1.56-1.78 0-.99.68-1.79 1.56-1.79.89 0 1.58.81 1.56 1.79 0 .98-.68 1.78-1.56 1.78zm6.64 0c-.86 0-1.56-.8-1.56-1.78 0-.99.68-1.79 1.56-1.79.89 0 1.58.81 1.56 1.79 0 .98-.67 1.78-1.56 1.78z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@verdanazero" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-icon-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-.96-.65-1.6-1.66-1.77-2.82h-3v13.14c0 1.5-1.22 2.72-2.72 2.72a2.72 2.72 0 010-5.44c.28 0 .55.04.8.12v-3.06a5.85 5.85 0 00-.8-.06 5.72 5.72 0 105.72 5.72V9.4a8.55 8.55 0 004.97 1.6V8a5.4 5.4 0 01-3.2-2.18z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 DUSK Project MC JAVA Roleplay. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/auth-guard.js"></script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/nav-dropdown.js"></script>
+</body>
+</html>

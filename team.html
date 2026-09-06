@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - The Dusky Duck Community</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth-guard.css">
+    <link rel="stylesheet" href="css/auth.css">
+
+    <style>
+        .team-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .team-title {
+            font-size: 36px;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .team-subtitle {
+            font-size: 16px;
+            color: #94a3b8;
+            margin-bottom: 50px;
+        }
+        /* ระบบจัดแถวการ์ดทีมงานให้กึ่งกลางแยกตามตำแหน่ง */
+        .team-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+        /* กล่องการ์ดทีมงานแนว Glassmorphism สีน้ำเงินเข้มขอบม่วง */
+        .team-card {
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            border-radius: 16px;
+            width: 200px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(167, 139, 250, 0.6);
+        }
+        /* ส่วนแสดงรูปหัวสกิน Minecraft */
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            margin: 0 auto 15px auto;
+            object-fit: cover;
+            display: block;
+        }
+        .team-name {
+            font-size: 18px;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        /* แถบยศ/ตำแหน่งต่างๆ */
+        .role-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .badge-owner { background: rgba(109, 40, 217, 0.4); color: #c084fc; border: 1px solid rgba(167, 139, 250, 0.3); }
+        .badge-coowner { background: rgba(29, 78, 216, 0.4); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); }
+        .badge-admin { background: rgba(5, 150, 105, 0.4); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+        .badge-parttime { background: rgba(190, 24, 74, 0.4); color: #fb7185; border: 1px solid rgba(251, 113, 133, 0.3); }
+
+        .team-desc {
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.6;
+            min-height: 54px;
+            margin-bottom: 15px;
+        }
+        .team-discord {
+            font-size: 12px;
+            color: #cbd5e1;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-family: monospace;
+        }
+    </style>
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="site-header glass-effect">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/banner2.png" alt="DUSK Logo">
+            </a>
+        </div>
+        <div class="header-info">
+            <span class="status-online">● IP: play.dusk-mc.com</span>
+            <span>👥 Online: 150/200</span>
+        </div>
+    </header>
+
+    <nav class="main-nav glass-effect">
+        <div class="nav-container">
+                        <ul class="nav-links">
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="chat.html">แชทบอท</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" class="active">เกี่ยวกับเซิร์ฟเวอร์ <span class="nav-dropdown-arrow">▾</span></button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1b8XUzjg0LRW1eghqyFfw-edwqzgakyKf_25sZq3WD0U/edit?usp=sharing">กฎเซิร์ฟเวอร์</a></li>
+                        <li><a href="team.html" class="active">ทีมงาน</a></li>
+                        <li><a href="story.html">เนื้อเรื่อง</a></li>
+                    </ul>
+                </li>
+                <li><a href="profile.html">โปรไฟล์</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="ค้นหาข้อมูล...">
+                <button>🔍</button>
+            </div>
+            <div id="auth-nav-slot"></div>
+        </div>
+    </nav>
+
+    <main class="team-section">
+        <h1 class="team-title">ทีมงานของเรา</h1>
+        <p class="team-subtitle">ทีมงานคุณภาพที่คอยดูแล Community และพัฒนาเซิร์ฟเวอร์</p>
+
+        <div class="team-row">
+            <div class="team-card">
+                <img src="img/avatar_owner1.png" alt="OwnerPed" class="team-avatar">
+                <div class="team-name">OwnerPed</div>
+                <span class="role-badge badge-owner">Owner</span>
+                <div class="team-desc">ผู้ก่อตั้ง DUSK ดูแลภาพรวมและการพัฒนาเซิร์ฟเวอร์</div>
+                <div class="team-discord">Discord : zenoxe1.q</div>
+            </div>
+            <div class="team-card">
+                <img src="img/avatar_owner2.png" alt="OwnerNew" class="team-avatar">
+                <div class="team-name">OwnerNew</div>
+                <span class="role-badge badge-owner">Owner</span>
+                <div class="team-desc">ผู้ก่อตั้ง DUSK ดูแลภาพรวมและการพัฒนาเซิร์ฟเวอร์</div>
+                <div class="team-discord">Discord : pxddlinggz.</div>
+            </div>
+            <div class="team-card">
+                <img src="img/avatar_owner3.png" alt="OwnerPraifa" class="team-avatar">
+                <div class="team-name">OwnerPraifa</div>
+                <span class="role-badge badge-owner">Owner</span>
+                <div class="team-desc">ผู้ก่อตั้ง DUSK ดูแลภาพรวมและดูแลเนื้อเรื่อง</div>
+                <div class="team-discord">Discord : kenni0_0</div>
+            </div>
+            <div class="team-card">
+                <img src="img/avatar_coowner.png" alt="Co-OwnerSee" class="team-avatar">
+                <div class="team-name">Co-OwnerSee</div>
+                <span class="role-badge badge-coowner">Co-Owner</span>
+                <div class="team-desc">ดูแลเรื่องการสร้างแมพและตั้งค่าต่างๆ ของMod</div>
+                <div class="team-discord">Discord : ceeey13580</div>
+            </div>
+        </div>
+
+        <div class="team-row">
+            <div class="team-card">
+                <img src="img/avatar_admin1.png" alt="AdminFin" class="team-avatar">
+                <div class="team-name">AdminFin</div>
+                <span class="role-badge badge-admin">Admin</span>
+                <div class="team-desc">ทีมงานแอดมินดูแลและเซิร์ฟเวอร์</div>
+                <div class="team-discord">Discord : Ixagear</div>
+            </div>
+            <div class="team-card">
+                <img src="img/avatar_admin2.png" alt="AdminWin" class="team-avatar">
+                <div class="team-name">AdminWin</div>
+                <span class="role-badge badge-admin">Admin</span>
+                <div class="team-desc">ทีมงานแอดมินดูแลและเซิร์ฟเวอร์</div>
+                <div class="team-discord">Discord : goose_night</div>
+            </div>
+            <div class="team-card">
+                <img src="img/avatar_admin3.png" alt="AdminJuno" class="team-avatar">
+                <div class="team-name">AdminJuno</div>
+                <span class="role-badge badge-admin">Admin</span>
+                <div class="team-desc">ทีมงานแอดมินดูแลและเนื้อเรื่อง</div>
+                <div class="team-discord">Discord : ahhhhhh2421</div>
+            </div>
+        </div>
+
+        <div class="team-row">
+            <div class="team-card">
+                <img src="img/avatar_pt1.png" alt="ParttimeBall" class="team-avatar">
+                <div class="team-name">ParttimeBall</div>
+                <span class="role-badge badge-parttime">Part Time</span>
+                <div class="team-desc">ทีมงานพาร์ทไทม์ช่วยดูแลเซิร์ฟเวอร์</div>
+                <div class="team-discord">Discord : hlwhlw2351</div>
+            </div>
+            <div class="team-card">
+                <img src="img/avatar_pt2.png" alt="ParttimeZova" class="team-avatar">
+                <div class="team-name">ParttimeZova</div>
+                <span class="role-badge badge-parttime">Part Time</span>
+                <div class="team-desc">ทีมงานพาร์ทไทม์ช่วยดูแลเซิร์ฟเวอร์</div>
+                <div class="team-discord">Discord : botsoart</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer glass-effect">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>DUSK <span>Roleplay</span></h3>
+                <p>เมืองแห่งบทบาทชีวิตสุดเข้มข้น และ Community ที่จริงจังที่สุด</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">หน้าหลัก</a>
+                <a href="about.html">เกี่ยวกับเรา</a>
+                <a href="team.html">ทีมงาน</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=61589582765236" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+                </a>
+                <a href="https://discord.gg/CHJv92x4Cu" target="_blank" rel="noopener noreferrer" aria-label="Discord" class="social-icon-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 5.36A19.8 19.8 0 0015.7 4c-.2.36-.44.85-.6 1.24a18.3 18.3 0 00-6.2 0A12.9 12.9 0 008.3 4a19.7 19.7 0 00-4.62 1.37C1.4 9.1.8 12.75 1.1 16.35a19.9 19.9 0 006.06 3.08c.49-.67.92-1.38 1.3-2.13-.71-.27-1.39-.6-2.03-1 .17-.13.34-.26.5-.4a14.2 14.2 0 0012.14 0c.16.14.33.27.5.4-.64.4-1.32.73-2.03 1 .38.75.81 1.46 1.3 2.13a19.9 19.9 0 006.06-3.08c.36-4.17-.72-7.78-3.58-10.99zM8.68 14.1c-.86 0-1.56-.8-1.56-1.78 0-.99.68-1.79 1.56-1.79.89 0 1.58.81 1.56 1.79 0 .98-.68 1.78-1.56 1.78zm6.64 0c-.86 0-1.56-.8-1.56-1.78 0-.99.68-1.79 1.56-1.79.89 0 1.58.81 1.56 1.79 0 .98-.67 1.78-1.56 1.78z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@verdanazero" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-icon-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-.96-.65-1.6-1.66-1.77-2.82h-3v13.14c0 1.5-1.22 2.72-2.72 2.72a2.72 2.72 0 010-5.44c.28 0 .55.04.8.12v-3.06a5.85 5.85 0 00-.8-.06 5.72 5.72 0 105.72 5.72V9.4a8.55 8.55 0 004.97 1.6V8a5.4 5.4 0 01-3.2-2.18z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 The Dusky Duck Community. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/auth-guard.js"></script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/nav-dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+/* ==========================================================================
+   PROFILE PAGE (หน้าโปรไฟล์)
+   ========================================================================== */
+
+.profile-loading {
+    text-align: center;
+    padding: 100px 0;
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.profile-page-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 50px 20px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.profile-card {
+    border-radius: 16px;
+    padding: 30px 32px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.profile-avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--glass-border);
+    box-shadow: 0 0 20px var(--primary-glow);
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.05);
+}
+
+.profile-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.profile-email-text {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+}
+
+.profile-joined-text {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.4);
+}
+
+.profile-section-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-main);
+}
+
+.profile-hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+.profile-photo-edit {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.profile-upload-btn {
+    display: inline-flex;
+    width: auto;
+    padding: 9px 18px;
+    font-size: 13.5px;
+    cursor: pointer;
+}
+
+.auth-danger-btn {
+    margin-top: 14px;
+    background: transparent;
+    border: 1px solid #f87171;
+    color: #f87171;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.auth-danger-btn:hover {
+    background: #f87171;
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-card {
+        padding: 24px 20px;
+    }
+}

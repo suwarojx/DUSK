@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แชทบอท - DUSK Roleplay</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth-guard.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/chat-page.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="chat-page-body">
+
+    <header class="site-header glass-effect">
+        <div class="logo">
+            <a href="index.html"><img src="img/banner2.png" alt="DUSK Logo"></a>
+        </div>
+        <div class="header-info">
+            <div class="info-item status-online">🟢 IP: play.dusk-mc.com</div>
+            <div class="info-item">👥 Online: 150/200</div>
+        </div>
+    </header>
+
+    <nav class="main-nav glass-effect">
+        <div class="nav-container">
+                        <ul class="nav-links">
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="chat.html" class="active">แชทบอท</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">เกี่ยวกับเซิร์ฟเวอร์ <span class="nav-dropdown-arrow">▾</span></button>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1b8XUzjg0LRW1eghqyFfw-edwqzgakyKf_25sZq3WD0U/edit?usp=sharing">กฎเซิร์ฟเวอร์</a></li>
+                        <li><a href="team.html">ทีมงาน</a></li>
+                        <li><a href="story.html">เนื้อเรื่อง</a></li>
+                    </ul>
+                </li>
+                <li><a href="profile.html">โปรไฟล์</a></li>
+            </ul>
+            <div id="auth-nav-slot"></div>
+        </div>
+    </nav>
+
+    <main class="chat-page-main">
+
+        <div class="chat-page-title">
+            <h1>🦆 DUSK Bot</h1>
+            <p>ผู้ช่วยตอบคำถามลูกโรลตลอด 24 ชั่วโมง</p>
+        </div>
+
+        <div class="chat-page-messages" id="cp-messages">
+            <div class="cp-msg bot">สวัสดีครับ! มีอะไรให้ช่วยเกี่ยวกับเซิร์ฟเวอร์ DUSK ไหมครับ 🦆 ลองพิมพ์คำถาม หรือกดตัวอย่างด้านล่างได้เลย</div>
+        </div>
+
+        <div class="chat-page-suggestions" id="cp-suggestions">
+            <button class="cp-suggest-btn">วิธีสอบ Whitelist ทำยังไง?</button>
+            <button class="cp-suggest-btn">กฎเซิร์ฟเวอร์ดูได้ที่ไหน?</button>
+            <button class="cp-suggest-btn">IP เซิร์ฟเวอร์คืออะไร?</button>
+        </div>
+
+        <div class="chat-page-input-wrap">
+            <div id="cp-attach-preview" class="cp-attach-preview" style="display:none;">
+                <img id="cp-attach-preview-img" src="" alt="รูปที่แนบ">
+                <button id="cp-attach-remove" type="button" aria-label="ลบรูป">✕</button>
+            </div>
+            <div class="chat-page-input-row">
+                <button id="cp-attach-btn" type="button" aria-label="แนบรูปภาพ">📎</button>
+                <input type="file" id="cp-file-input" accept="image/*" style="display:none;">
+                <textarea id="cp-input" rows="1" placeholder="พิมพ์คำถามของคุณ... (แนบรูปได้ด้วย)"></textarea>
+                <button id="cp-send">➤</button>
+            </div>
+            <p class="chat-page-hint">แชทบอทอาจตอบผิดพลาดได้ หากไม่แน่ใจให้แจ้ง Ticket ในดิสคอร์ดแทน</p>
+        </div>
+
+    </main>
+
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/auth-guard.js"></script>
+
+    <!-- แชทบอทเต็มจอ -->
+    <script src="js/chat-page.js"></script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/nav-dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+/* ==========================================================================
+   RESPONSIVE.CSS — ปรับเว็บทั้งหมดให้ใช้งานบนมือถือได้ดี
+   ไฟล์นี้ต้องถูก <link> เป็นไฟล์ CSS "ตัวสุดท้าย" ในทุกหน้า
+   เพื่อให้กฎในนี้ทับกฎเก่าที่ยังไม่รองรับมือถือได้ถูกต้อง
+   ========================================================================== */
+
+img { max-width: 100%; }
+
+/* ----------------------------------------------------------------
+   HAMBURGER MENU (ใช้ร่วมกับ js/mobile-nav.js)
+   ---------------------------------------------------------------- */
+.nav-toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 8px 10px;
+}
+
+/* ----------------------------------------------------------------
+   TABLET (แท็บเล็ต / จอแคบกว่า 992px)
+   ---------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .banner { height: auto; padding: 60px 5%; }
+    .fade-slider { height: 320px; }
+}
+
+/* ----------------------------------------------------------------
+   MOBILE (มือถือ / จอแคบกว่า 768px)
+   ---------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* --- Header --- */
+    .site-header {
+        height: auto;
+        padding: 12px 5%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .logo img {
+        height: 52px !important;
+    }
+    .header-info {
+        display: none;
+    }
+
+    /* --- Navbar → Hamburger --- */
+    .nav-container {
+        flex-wrap: wrap;
+        padding: 8px 5%;
+        position: relative;
+    }
+    .nav-toggle-btn {
+        display: block;
+        order: 1;
+        margin-left: auto;
+    }
+    #auth-nav-slot {
+        order: 2;
+    }
+    .search-box {
+        order: 3;
+        width: 100%;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 4;
+        text-align: center;
+        margin-top: 8px;
+    }
+    .nav-links.nav-open {
+        display: flex;
+    }
+    .nav-links li a {
+        padding: 12px 10px;
+    }
+    .auth-user-box {
+        flex-direction: row;
+        gap: 8px;
+    }
+    .auth-user-name {
+        font-size: 12.5px;
+    }
+
+    /* --- Nav dropdown บนมือถือ: ให้ขยายอยู่ในเมนูแทน popup ลอย --- */
+    .nav-dropdown-toggle {
+        justify-content: center;
+        width: 100%;
+        padding: 12px 10px;
+    }
+    .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        display: none;
+        width: 100%;
+        margin-top: 4px;
+        box-shadow: none;
+        background: rgba(255,255,255,0.03);
+    }
+    .nav-dropdown.open .nav-dropdown-menu {
+        display: flex;
+    }
+    .nav-dropdown-menu li a {
+        text-align: center;
+    }
+
+    /* --- Banner --- */
+    .banner-content h1 { font-size: 30px; }
+    .banner-content p { font-size: 15px; }
+    .btn-glow { padding: 12px 30px; font-size: 14px; }
+
+    /* --- Announcement board --- */
+    .announce-board-wrap { padding: 40px 5% 10px; }
+    .announce-card { padding: 22px 20px; }
+
+    /* --- Layout / Grid --- */
+    .layout-container { padding: 24px 5%; gap: 24px; }
+    .grid-container { grid-template-columns: 1fr; }
+
+    /* --- Fade slider (about page) --- */
+    .fade-slider { height: 220px; }
+    .section-title-center { font-size: 17px; }
+
+    /* --- Footer --- */
+    .footer-container {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+    }
+    .footer-links a {
+        margin: 0 10px;
+        display: inline-block;
+    }
+    .footer-social {
+        justify-content: center;
+    }
+
+    /* --- Auth / Login page --- */
+    .auth-page-wrap { padding: 30px 5%; }
+    .auth-box { padding: 28px 20px; }
+
+    /* --- Chat page --- */
+    .chat-page-title h1 { font-size: 18px; }
+    .cp-msg { max-width: 92%; }
+
+    /* --- Profile page --- */
+    .profile-page-wrap { padding: 30px 5% 60px; }
+    .profile-card { padding: 22px 18px; }
+    .profile-photo-edit {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* --- Team page cards --- */
+    .team-card { width: 42%; min-width: 140px; padding: 18px 12px; }
+    .team-title { font-size: 26px; }
+
+    /* --- Story page --- */
+    .story-page-wrap { padding: 40px 5% 60px; }
+    .story-section { padding: 24px 20px; }
+    .story-hero h1 { font-size: 26px; }
+    .story-episode-header { padding: 14px 16px; gap: 8px; }
+    .story-episode-title { font-size: 14px; }
+    .story-episode.open .story-episode-body { padding: 0 16px 18px; }
+    .story-episode.locked { padding: 14px 16px; flex-wrap: wrap; }
+    .story-lock-label { font-size: 12px; margin-left: 0; }
+}
+
+/* ----------------------------------------------------------------
+   SMALL MOBILE (จอแคบกว่า 480px)
+   ---------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .banner-content h1 { font-size: 24px; }
+    .banner-content p { font-size: 13px; }
+    .fade-slider { height: 180px; }
+    .team-card { width: 100%; }
+    .auth-tab { font-size: 13px; padding: 10px 0; }
+    .chat-page-suggestions { flex-direction: column; align-items: stretch; }
+    .cp-suggest-btn { width: 100%; }
+}
