@@ -1,0 +1,116 @@
+/* ==========================================================================
+   AUTH SYSTEM STYLES (หน้า Login / Register + ปุ่มบน Navbar)
+   ========================================================================== */
+
+.nav-container #auth-nav-slot {
+    display: flex;
+    align-items: center;
+}
+
+.auth-login-link {
+    padding: 10px 22px;
+}
+
+.auth-user-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.auth-user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.auth-logout-btn {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+.auth-page-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 5%;
+    min-height: 60vh;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    padding: 40px 35px;
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.auth-tab {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 12px 0;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.auth-tab.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auth-form label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 12px;
+}
+
+.auth-form input {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--text-main);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.auth-form input:focus {
+    border-color: var(--primary);
+}
+
+.auth-submit-btn {
+    margin-top: 24px;
+    width: 100%;
+}
+
+.auth-error {
+    color: #f87171;
+    font-size: 13px;
+    margin-bottom: 10px;
+    min-height: 16px;
+}
+
+.auth-success {
+    color: #4ade80;
+    font-size: 13px;
+    margin-bottom: 10px;
+    min-height: 16px;
+}
